@@ -183,21 +183,21 @@ def get_user_guess(guessed_letters: Set[str]) -> str:
     # TODO: проверять, что пользователь ввел только одну букву, что он не вводил уже эту букву и тд
     # Подсказка: не забывай про регистр
     while True:
-    letter_users = input("Введите предполагаемую букву: ").upper()
-    if len(letter_users) == 1:
-        if letter_users == 'Ё' or 'А' <= letter_users <= 'Я':
-            if letter_users in guessed_letters:
-                print("Такая буква уже была испробована/введена. Попробуйте другую.")
-                continue
+        letter_users = input("Введите предполагаемую букву: ").upper()
+        if len(letter_users) == 1:
+            if letter_users == 'Ё' or 'А' <= letter_users <= 'Я':
+                if letter_users in guessed_letters:
+                    print("Такая буква уже была испробована/введена. Попробуйте другую.")
+                    continue
+                else:
+                    guessed_letters.add(letter_users)
             else:
-                guessed_letters.add(letter_users)
+                print("Вы можете вводить только русские буквы. Ничего кроме.")
+                continue
         else:
-            print("Вы можете вводить только русские буквы. Ничего кроме.")
+            print("Вы можете ввести только одну букву за одну попытку.")
             continue
-    else:
-        print("Вы можете ввести только одну букву за одну попытку.")
-        continue
-    return letter_users
+        return letter_users
     
 def check_win(secret_word: str, guessed_letters: Set[str]) -> bool:
     """Проверка, угадано ли все слово"""
