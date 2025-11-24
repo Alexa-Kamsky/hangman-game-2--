@@ -55,7 +55,7 @@ def main():
             
             # Ввод буквы
             # TODO: обработать ввод буквы (используй get_user_guess)
-            letter = get_user_guess(guessed_letters, secret_word)
+            letter = get_user_guess(guessed_letters)
             
             # Проверка угадана ли буква
             # TODO: добавить реализацию проверки буквы (используй get_user_guess)
@@ -177,7 +177,7 @@ def draw_gallows(attempts_left: int):
 
     for row in matrix_hangman:
         print(''.join(row))
-    
+
 def get_user_guess(guessed_letters: Set[str]) -> str:
     """Ввод и валидация буквы от пользователя"""
     # TODO: проверять, что пользователь ввел только одну букву, что он не вводил уже эту букву и тд
