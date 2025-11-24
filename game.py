@@ -208,7 +208,7 @@ def check_win(secret_word: str, guessed_letters: Set[str]) -> bool:
     return True
 
 list_score_every_game = [] #для расчета этого, самого большого количества баллов за игру
-def calculate_score(secret_word: str, attempts_used: int) -> int:
+def calculate_score(secret_word: str, attempts_left: int) -> int:
     """Вычисление счета за игру"""
     # TODO: необходимо, используя длину secret_word и количество попыток, посчитать счет
     score = attempts_left * len(secret_word)
