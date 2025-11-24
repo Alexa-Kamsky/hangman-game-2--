@@ -233,10 +233,11 @@ def update_stats(won: bool, score: int):
 def show_stats():
     """Отображение статистики"""
     global stats
-    # win_percentage = TODO: посчитай на основе имеющейся статистики процент выигрыша
-    win_percentage = (stats["games_won"] / stats["games_played"]) * 100
-    # average_score = TODO: посчитай на основе имеющейся статистики средний счет
-    average_score = stats["total_score"] / stats["games_played"]
+    if stats["games_played"] > 0:
+        # win_percentage = TODO: посчитай на основе имеющейся статистики процент выигрыша
+        win_percentage = (stats["games_won"] / stats["games_played"]) * 100
+        # average_score = TODO: посчитай на основе имеющейся статистики средний счет
+        average_score = stats["total_score"] / stats["games_played"]
     else:
         win_percentage = 0
         average_score = 0
